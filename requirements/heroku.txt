@@ -1,0 +1,4 @@
+-r prod.txt
+
+dj-database-url==0.5.0
+django-heroku==0.3.1

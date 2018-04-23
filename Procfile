@@ -1,0 +1,1 @@
+web: gunicorn lodms.wsgi

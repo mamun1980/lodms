@@ -1,0 +1,67 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify admin_static %}
+
+{% block extrahead %}
+{{ block.super }}
+    <script type="text/javascript" src="{% static 'admin/js/jquery-11.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/materialize.min.js' %}"></script>
+
+
+{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href="{% static 'admin/css/materialize.min.css' %}"  />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/case_details_view.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col s12">
+            <div id="docs_preview" >
+                {% for f in docs %}
+                    <div class="card teal">
+                        <div class="card-image">
+                            <img src="/media/{{f}}" height="200" class="thumb">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
+                                href="#modal_{{ forloop.counter }}" >
+                                <i class="material-icons">zoom_in</i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Modal Structure -->
+                    <div id="modal_{{ forloop.counter }}" class="modal">
+                        <div class="modal-content">
+                            <img src="/media/{{f}}" >
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div id="footer">
+
+</div>
+
+<script type="text/javascript">
+    (function($) {
+    // < start of closure
+    // within this block, $ = django.jQuery
+        $(document).ready(function(e) {
+
+            $('.modal').modal();
+
+        });
+    })(jQuery);
+
+</script>
+
+{% endblock %}
