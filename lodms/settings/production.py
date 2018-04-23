@@ -9,16 +9,16 @@ DEBUG = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lodms',
-        'USER': 'mamun',
+        'NAME': 'lodms_db',
+        'USER': 'lodms_user',
         'PASSWORD': 'qweqwe123',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
 
-# STATICFILES_DIRS += [
-	
-# ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = []
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

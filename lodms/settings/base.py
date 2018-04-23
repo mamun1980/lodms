@@ -92,23 +92,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'data/db.sqlite3'),
-#     }
-# }
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/2.0/topics/i18n/
-
-# LANGUAGE_CODE = 'bn'
-
-# LANGUAGES = [
-#     ('bn', _('Bengali')),
-#     ('en', _('English')),
-# ]
 
 USE_THOUSAND_SEPARATOR = True
 

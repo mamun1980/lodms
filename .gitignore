@@ -7,3 +7,10 @@ data
 __pycache__
 static/clientapps/node_modules
 media
+lodms.sock
+manage.py
+lodms/settings/production.py
+lodms/wsgi.py
+static/admin
+staticfiles
+
