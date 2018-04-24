@@ -1,0 +1,62 @@
+#case_main_view {
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.case_details {
+    /* flex-grow: 2; */
+    background-color: teal;
+    min-height: '200px';
+    padding: 10px;
+    margin: 10px;
+    /* display: flex; */
+    position: relative;
+
+}
+.case_inspector {
+    /* flex-grow: 2; */
+}
+.info {
+    display: flex;
+    width: "100%";
+    /* flex-grow: 1, */
+    border-bottom: 1px solid tomato;
+
+    padding: 10px;
+}
+
+.info_title {
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: white;
+    width: 150px;
+    justify-content:space-between;
+    margin-right: 20px;
+    border-right: 2px dotted tomato;
+}
+.info_value {
+    justify-content: space-between;
+}
+#docs_preview {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    background-color: teal;
+}
+.thumb {
+    background: #CCC;
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+}
+#docs_preview .btn-floating.halfway-fab {
+    right: 42%;
+    top: 42%;
+}
+.modal {
+    /* display: inline-table !important; */
+    top: 5% !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 95% !important;
+    max-height: 90% !important;
+}

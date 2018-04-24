@@ -21,10 +21,11 @@ urlpatterns =i18n_patterns(
 # urlpatterns += i18n_patterns(
 #     path('^i18n/', include('django.conf.urls.i18n')),
 # )
-
+'''
 if settings.DEBUG:
 	from django.conf.urls import url
 	import debug_toolbar
 	urlpatterns = [
 		url(r'^__debug__/', include(debug_toolbar.urls)),
 	] + urlpatterns
+'''

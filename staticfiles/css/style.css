@@ -1,0 +1,12 @@
+body {
+	background-color: #DDE;
+}
+
+.case_info {
+	font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 5px 15px;
+    margin-bottom: 12px;
+    border-bottom: none;
+}
