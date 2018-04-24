@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-04 17:43+0600\n"
+"POT-Creation-Date: 2018-04-24 21:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,54 +18,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:73
+#: casems/models.py:73
 msgid "case_no"
 msgstr "মোকদ্দমা নং"
 
-#: models.py:82
+#: casems/models.py:82
 msgid "case"
 msgstr "মোকদ্দমা"
 
-#: models.py:83
+#: casems/models.py:83
 msgid "cases"
 msgstr "মোকদ্দমাগুলো"
 
-#: models.py:120
+#: casems/models.py:120
 msgid "applicant"
 msgstr "আবেদনকারী ( বাদী )"
 
-#: models.py:121
+#: casems/models.py:121
 msgid "applicantes"
 msgstr "আবেদনকারীগন ( বাদীগন )"
 
-#: models.py:134
+#: casems/models.py:134
 msgid "defendant"
 msgstr "বিবাদী"
 
-#: models.py:135
+#: casems/models.py:135
 msgid "defendants"
 msgstr "বিবাদীগন"
 
-#: templates/admin/case_details_view.html:24
+#: casems/templates/admin/case_details_view.html:24
 msgid "Welcome,"
 msgstr "সাগতম"
 
-#: templates/admin/case_details_view.html:29
+#: casems/templates/admin/case_details_view.html:29
 msgid "View site"
 msgstr ""
 
-#: templates/admin/case_details_view.html:34
+#: casems/templates/admin/case_details_view.html:34
 msgid "Documentation"
 msgstr ""
 
-#: templates/admin/case_details_view.html:38
+#: casems/templates/admin/case_details_view.html:38
 msgid "Change password"
 msgstr ""
 
-#: templates/admin/case_details_view.html:40
+#: casems/templates/admin/case_details_view.html:40
 msgid "Log out"
 msgstr ""
 
-#: templates/admin/case_details_view.html:47
+#: casems/templates/admin/case_details_view.html:47
 msgid "Home"
 msgstr ""

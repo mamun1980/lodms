@@ -1,0 +1,36 @@
+{% load i18n admin_urls static admin_modify admin_static %}
+{% for f in docs %}
+<div class="col s12 m4 l3 file_thumb">
+    <div class="card teal">
+        <div class="card-image">
+            <img src="/media/{{f}}" height="200" class="thumb">
+            <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
+                href="#modal_{{ forloop.counter }}" >
+                <i class="material-icons">remove_red_eye</i>
+            </a>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal_{{ forloop.counter }}" class="modal">
+        <div class="modal-content">
+            <img src="/media/{{f}}" >
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<script type="text/javascript">
+    (function($) {
+    // < start of closure
+    // within this block, $ = django.jQuery
+        $(document).ready(function(e) {
+            // $('.fixed-action-btn').floatingActionButton();
+            $('.modal').modal();
+
+
+        });
+    })(jQuery);
+
+</script>

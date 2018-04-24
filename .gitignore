@@ -2,7 +2,6 @@
 .env
 *.pyc
 venv
-.DS
 data
 __pycache__
 static/clientapps/node_modules

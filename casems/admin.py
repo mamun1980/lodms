@@ -31,6 +31,7 @@ class FileAdmin(admin.ModelAdmin):
         return mark_safe('<a href="{src}" target="_blank">view</a>'.format( src=url ))
 
     def file_details_view(self, request, extra_context=None):
+        # import pdb; pdb.set_trace();
         object_id = request.META['PATH_INFO'].strip('/').split('/')[-2]
         try:
             file = self.model.objects.get(pk=object_id)
@@ -138,7 +139,7 @@ class CaseAdmin(admin.ModelAdmin):
         self.request = request
         return super(CaseAdmin, self).changelist_view(request, extra_context=extra_context)
 
-    def view_case(self, obj):
+    def case_files(self, obj):
         url = 'http://'
         url += self.request.get_host()
         url += self.request.get_full_path()
@@ -180,6 +181,7 @@ class CaseAdmin(admin.ModelAdmin):
         formset.save()
 
     def case_details_view(self, request, extra_context=None):
+        # import pdb; pdb.set_trace();
         object_id = request.META['PATH_INFO'].strip('/').split('/')[-2]
         try:
             case = self.model.objects.get(pk=object_id)
@@ -224,7 +226,7 @@ class CaseAdmin(admin.ModelAdmin):
     fields = (('case_no', 'case_type', 'status'), 'details')
     list_filter = ['case_type', 'status']
     search_fields = ['case_no',]
-    list_display = ('case_no', 'case_type', 'status', 'show_case_file', 'view_case')
+    list_display = ('case_no', 'case_type', 'status', 'case_files')
 
 
 
