@@ -48,6 +48,8 @@ class FileAdmin(admin.ModelAdmin):
 
             if not os.path.exists(directory):
                 os.makedirs(directory)
+                fd = os.fopen(directory)
+                os.fchown(fd, 1000, 1000)
 
             for doc in os.listdir(directory):
                 if not os.path.isdir(doc):

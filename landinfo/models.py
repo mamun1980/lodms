@@ -70,10 +70,10 @@ class MouzaMeta(models.Model):
     """docstring for [object Object]."""
     mouja = models.ForeignKey(Mouza, null=True, blank=True, on_delete=models.SET_NULL)
     total_amount_of_land = models.DecimalField(max_digits=8, decimal_places=3, null=True, blank=True)
-    total_khas_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
-    total_bondobosto_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
-    total_recorded_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
-    total_orpito_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
+    non_settleable_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
+    settleable_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
+    surrendered_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
+    alluvion_diluvion = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
 
     total_jolashoy = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
     total_cultivation = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
@@ -101,6 +101,7 @@ class Plot(models.Model):
     class Meta:
         verbose_name = _('Plot')
         verbose_name_plural = _('Plots')
+        unique_together = ('mouza', 'plot_no',)
 
     def __unicode__(self):
         return self.plot_no
@@ -115,12 +116,11 @@ class Plot(models.Model):
 class PlotMeta(models.Model):
     """docstring for [object Object]."""
     plot = models.ForeignKey(Plot, null=True, blank=True, on_delete=models.SET_NULL)
-    total_amount_of_land  = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
-
-    total_khas_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
-    total_bondobosto_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
-    total_recorded_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
-    total_orpito_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
+    total_amount_of_land = models.DecimalField(max_digits=8, decimal_places=3, null=True, blank=True)
+    non_settleable_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
+    settleable_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
+    surrendered_land = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
+    alluvion_diluvion = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
 
     total_jolashoy = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)
     total_cultivation = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True)

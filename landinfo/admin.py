@@ -22,7 +22,8 @@ admin_site.register(ClassOfLand)
 
 class MouzaMetaInline(admin.StackedInline):
     model = MouzaMeta
-    fields = ('total_khas_land', 'total_bondobosto_land', 'total_recorded_land', 'total_orpito_land', 'total_amount_of_land')
+    fields = ('non_settleable_land', 'settleable_land', 'surrendered_land',
+                    'alluvion_diluvion', 'total_amount_of_land')
     # verbose_name = 'Doc location for file'
     max_num = 1
 
@@ -36,26 +37,34 @@ class MouzaAdmin(admin.ModelAdmin):
             khas_land = 'তথ্য নাই!'
         return str(khas_land)
 
-    def total_khas_land(self, obj):
+    def non_settleable_land(self, obj):
         metas = obj.mouzameta_set.all()
         if metas:
-            khas_land = metas[0].total_khas_land
+            khas_land = metas[0].non_settleable_land
         else:
             khas_land = 'তথ্য নাই!'
         return str(khas_land)
 
-    def total_bondobosto_land(self, obj):
+    def settleable_land(self, obj):
         metas = obj.mouzameta_set.all()
         if metas:
-            khas_land = metas[0].total_bondobosto_land
+            khas_land = metas[0].settleable_land
         else:
             khas_land = 'তথ্য নাই!'
         return str(khas_land)
 
-    def total_recorded_land(self, obj):
+    def surrendered_land(self, obj):
         metas = obj.mouzameta_set.all()
         if metas:
-            khas_land = metas[0].total_recorded_land
+            khas_land = metas[0].surrendered_land
+        else:
+            khas_land = 'তথ্য নাই!'
+        return str(khas_land)
+
+    def alluvion_diluvion(self, obj):
+        metas = obj.mouzameta_set.all()
+        if metas:
+            khas_land = metas[0].alluvion_diluvion
         else:
             khas_land = 'তথ্য নাই!'
         return str(khas_land)
@@ -65,8 +74,8 @@ class MouzaAdmin(admin.ModelAdmin):
         MouzaMetaInline,
     ]
     search_fields = ['mouza_name', 'jl_no']
-    list_display = ('mouza_name', 'jl_no', 'upazila', 'total_khas_land', 'total_recorded_land',
-                    'total_bondobosto_land', 'total_amount_of_land')
+    list_display = ('mouza_name', 'jl_no', 'upazila', 'non_settleable_land', 'settleable_land', 'surrendered_land',
+                    'alluvion_diluvion', 'total_amount_of_land')
 
 admin_site.register(Mouza, MouzaAdmin)
 admin_site.register(MouzaMeta)
@@ -74,7 +83,8 @@ admin_site.register(MouzaMeta)
 
 class PlotMetaInline(admin.StackedInline):
     model = PlotMeta
-    fields = ('total_khas_land', 'total_bondobosto_land', 'total_recorded_land', 'total_orpito_land')
+    fields = ('non_settleable_land', 'settleable_land', 'surrendered_land',
+                    'alluvion_diluvion', 'total_amount_of_land')
     # verbose_name = 'Doc location for file'
     max_num = 1
 
@@ -93,26 +103,34 @@ class PlotAdmin(admin.ModelAdmin):
             khas_land = 'তথ্য নাই!'
         return str(khas_land)
 
-    def total_khas_land(self, obj):
+    def non_settleable_land(self, obj):
         metas = obj.plotmeta_set.all()
         if metas:
-            khas_land = metas[0].total_khas_land
+            khas_land = metas[0].non_settleable_land
         else:
             khas_land = 'তথ্য নাই!'
         return str(khas_land)
 
-    def total_bondobosto_land(self, obj):
+    def settleable_land(self, obj):
         metas = obj.plotmeta_set.all()
         if metas:
-            khas_land = metas[0].total_bondobosto_land
+            khas_land = metas[0].settleable_land
         else:
             khas_land = 'তথ্য নাই!'
         return str(khas_land)
 
-    def total_recorded_land(self, obj):
+    def surrendered_land(self, obj):
         metas = obj.plotmeta_set.all()
         if metas:
-            khas_land = metas[0].total_recorded_land
+            khas_land = metas[0].surrendered_land
+        else:
+            khas_land = 'তথ্য নাই!'
+        return str(khas_land)
+
+    def alluvion_diluvion(self, obj):
+        metas = obj.plotmeta_set.all()
+        if metas:
+            khas_land = metas[0].alluvion_diluvion
         else:
             khas_land = 'তথ্য নাই!'
         return str(khas_land)
@@ -124,8 +142,8 @@ class PlotAdmin(admin.ModelAdmin):
 
     list_filter = ['mouza',]
     search_fields = ['plot_no', 'mouza__mouza_name']
-    list_display = ('plot_no', 'mouza', 'total_khas_land', 'total_recorded_land',
-                    'total_bondobosto_land', 'total_amount_of_land')
+    list_display = ('plot_no', 'mouza', 'non_settleable_land', 'settleable_land', 'surrendered_land',
+                    'alluvion_diluvion', 'total_amount_of_land')
 
 admin_site.register(Plot, PlotAdmin)
 # admin_site.register(PlotMeta, PlotMetaAdmin)
